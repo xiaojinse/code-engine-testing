@@ -1,26 +1,5 @@
 # -*- coding: utf-8 -*-
-########################################################################################
-# FILE          : bdpf_vp_trigger.py
-# SYSTEM        : BDPF
-# DESCRIPTION   : This program moves file from trigger bucket to queued location, \
-#and renames file with timestamp.
-# USAGE         : This program is called by IBM Cloud Functions.
-# INPUT         : dictionary{
-#                      "Arg_cos_auth_endpoint",
-#                      "Arg_cos_api_key_id",
-#                      "Arg_cos_resource_crn",
-#                      "Arg_cos_endpoint"
-#                      "Arg_trigger_bucket"
-#                      "Arg_process_queued_loc"
-#                      } 
-# COMMENT       :　This program doesn't return any return-code because the shell \
-#script checks the logfile and send notifications if there are any warnings or errors.
-#---------------------------------------------------------------------------------------
-# MODULE DESIGN : IBM
-# AUTHOR        : IBM
-# CREATE DATE   : 2021/10/01
-# EDIT HISTORY  :
-########################################################################################
+
 
 import sys
 import traceback
@@ -37,7 +16,7 @@ Even if this exception is raised, this program does nothing for this exception a
 class Copy_fail_exception(Exception):
     pass
 
-# Almost process is defined in this class.(This is not sophisticated from the object-oriented perspective.)
+
 class Readxlsx:
     # The constructer checks number of parameter, declares variables and creates resource of ICOS.
     def __init__(self, dict_param):
@@ -82,7 +61,7 @@ class Readxlsx:
 
         return cos, client
 
-    # Get file list named "****.xlsx" in trigger bucket
+   
     def get_file_list(self):
         print("INFO : IPY2104 File list aquisition process started")
         try:
@@ -101,7 +80,7 @@ class Readxlsx:
         print("INFO : IPY2107 File list aquisition process finished.")
         return file_list
 
-    # Rename file with timestamp not to overlap existing file name.
+    
     def timestamp_filename(self, filename):
         print("INFO : IPY2108 File ({}) timestamp add process started.".format(filename))
         try:
@@ -150,7 +129,7 @@ class Readxlsx:
             {traceback.format_exc()}"""
             print(e_msg)
 
-    # This method moves file from trigger bucket to queued location, and renames file with timestamp.        
+         
     def exec_file_list(self, file_list):
         for index, xlsx_name in enumerate(file_list):
             print("INFO : IPY2116 File ({}) execution process started.".format(xlsx_name))
@@ -166,7 +145,7 @@ class Readxlsx:
                 """
                 pass
 
-# This method is called from IBM Cloud Functions　everytime excel file is uploaded in trigger bucket.
+
 def main(dict):
     try:
         read_xlsx_inst = Readxlsx(dict)
