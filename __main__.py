@@ -154,4 +154,4 @@ def main(dict):
         print("INFO : IPY2199 Finished the program.")
     except SystemExit as e:
         print("ERROR : EPY2199 Exit the program.")
-    return { 'message' : 'bdpf_vp_excel_move_read.py finished'}
+    return { 'message' : 'python implemention finished'}
