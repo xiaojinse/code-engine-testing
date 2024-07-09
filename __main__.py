@@ -147,11 +147,11 @@ class Readxlsx:
 
 
 def main(dict):
-    try:
-        read_xlsx_inst = Readxlsx(dict)
-        file_list = read_xlsx_inst.get_file_list()
-        read_xlsx_inst.exec_file_list(file_list)
-        print("INFO : IPY2199 Finished the program.")
-    except SystemExit as e:
-        print("ERROR : EPY2199 Exit the program.")
+    #try:
+    #    read_xlsx_inst = Readxlsx(dict)
+    #    file_list = read_xlsx_inst.get_file_list()
+    #    read_xlsx_inst.exec_file_list(file_list)
+    #    print("INFO : IPY2199 Finished the program.")
+    #except SystemExit as e:
+    #    print("ERROR : EPY2199 Exit the program.")
     return { 'message' : 'python implemention finished'}
