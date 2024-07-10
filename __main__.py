@@ -146,7 +146,8 @@ class Readxlsx:
                 pass
 
 
-def main(dict):
+#def main(dict):
+def main():
     #try:
     #    read_xlsx_inst = Readxlsx(dict)
     #    file_list = read_xlsx_inst.get_file_list()
