@@ -147,7 +147,7 @@ class Readxlsx:
 
 
 #def main(dict):
-def main():
+
     #try:
     #    read_xlsx_inst = Readxlsx(dict)
     #    file_list = read_xlsx_inst.get_file_list()
@@ -155,4 +155,16 @@ def main():
     #    print("INFO : IPY2199 Finished the program.")
     #except SystemExit as e:
     #    print("ERROR : EPY2199 Exit the program.")
-    return { 'message' : 'python implemention finished'}
+#    return { 'message' : 'python implemention finished'}
+
+def main(params):
+  name = params.get("name", "world")
+  greeting = "Hello " + name + "!"
+
+  return {
+        "headers": {
+            "Content-Type": "application/json",
+        },
+        "statusCode": 200,
+        "body": greeting,
+  }
