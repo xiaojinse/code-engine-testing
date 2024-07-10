@@ -146,7 +146,7 @@ class Readxlsx:
                 pass
 
 
-#def main(dict):
+def main(dict):
 
     #try:
     #    read_xlsx_inst = Readxlsx(dict)
@@ -155,16 +155,5 @@ class Readxlsx:
     #    print("INFO : IPY2199 Finished the program.")
     #except SystemExit as e:
     #    print("ERROR : EPY2199 Exit the program.")
-#    return { 'message' : 'python implemention finished'}
+    return { 'message' : 'python implemention finished'}
 
-def main(params):
-  name = params.get("name", "world")
-  greeting = "Hello " + name + "!"
-
-  return {
-        "headers": {
-            "Content-Type": "application/json",
-        },
-        "statusCode": 200,
-        "body": greeting,
-  }
