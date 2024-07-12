@@ -146,7 +146,7 @@ class Readxlsx:
                 pass
 
 
-def main(dict):
+def main(params):
 
     #try:
     #    read_xlsx_inst = Readxlsx(dict)
@@ -156,7 +156,7 @@ def main(dict):
     #except SystemExit as e:
     #    print("ERROR : EPY2199 Exit the program.")
     #return { 'message' : 'python implemention finished'}
-    msg = f"python implemention finished!"
+    var msg = 'You did not tell me who you are.'
     return {
         # specify headers for the HTTP response
         # we only set the Content-Type in this case, to 
@@ -173,7 +173,7 @@ def main(dict):
         # construct a very simple HTML page, which renders
         # the greeting string, we constructed earlier as a 
         # level 3 header
-        "body": f"<html><body><h3>{msg}</h3></body></html>",
+        "body": `<html><body><h3>${msg}</h3></body></html>`,
     }
 
 
