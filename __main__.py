@@ -155,5 +155,25 @@ def main(dict):
     #    print("INFO : IPY2199 Finished the program.")
     #except SystemExit as e:
     #    print("ERROR : EPY2199 Exit the program.")
-    return { 'message' : 'python implemention finished'}
+    #return { 'message' : 'python implemention finished'}
+    msg = f"python implemention finished!"
+    return {
+        # specify headers for the HTTP response
+        # we only set the Content-Type in this case, to 
+        # ensure the text is properly displayed in the browser
+        "headers": {
+            'Content-Type': 'text/html; charset=utf-8',
+        },
+        
+        # explicitly set the HTTP status code to 200
+        "statusCode": 200,
+        
+        # the body of the HTTP response carries the data, our
+        # function wants to return
+        # construct a very simple HTML page, which renders
+        # the greeting string, we constructed earlier as a 
+        # level 3 header
+        "body": f"<html><body><h3>{msg}</h3></body></html>",
+    }
+
 
