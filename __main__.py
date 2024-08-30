@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 
 
@@ -146,34 +147,12 @@ class Readxlsx:
                 pass
 
 
-def main(params):
-
-    #try:
-    #    read_xlsx_inst = Readxlsx(dict)
-    #    file_list = read_xlsx_inst.get_file_list()
-    #    read_xlsx_inst.exec_file_list(file_list)
-    #    print("INFO : IPY2199 Finished the program.")
-    #except SystemExit as e:
-    #    print("ERROR : EPY2199 Exit the program.")
-    #return { 'message' : 'python implemention finished'}
-    var msg = 'You did not tell me who you are.'
-    return {
-        # specify headers for the HTTP response
-        # we only set the Content-Type in this case, to 
-        # ensure the text is properly displayed in the browser
-        "headers": {
-            'Content-Type': 'text/html; charset=utf-8',
-        },
-        
-        # explicitly set the HTTP status code to 200
-        "statusCode": 200,
-        
-        # the body of the HTTP response carries the data, our
-        # function wants to return
-        # construct a very simple HTML page, which renders
-        # the greeting string, we constructed earlier as a 
-        # level 3 header
-        "body": `<html><body><h3>${msg}</h3></body></html>`,
-    }
-
-
+def main(dict):
+    try:
+        read_xlsx_inst = Readxlsx(dict)
+        file_list = read_xlsx_inst.get_file_list()
+        read_xlsx_inst.exec_file_list(file_list)
+        print("INFO : IPY2199 Finished the program.")
+    except SystemExit as e:
+        print("ERROR : EPY2199 Exit the program.")
+    return { 'message' : 'python implemention finished'}
