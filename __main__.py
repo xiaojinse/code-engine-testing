@@ -148,12 +148,18 @@ class Readxlsx:
 
 
 def main(dict):
-  print("helen-testing-123")
-  #  try:
-  #      read_xlsx_inst = Readxlsx(dict)
-  #      file_list = read_xlsx_inst.get_file_list()
-  #      read_xlsx_inst.exec_file_list(file_list)
-  #      print("INFO : IPY2199 Finished the program.")
-  #  except SystemExit as e:
-  #      print("ERROR : EPY2199 Exit the program.")
-  return { 'message' : 'python implemention finished'}
+    print("helen-testing-123")
+    logging.basicConfig(
+        format=f'%(asctime)s %(levelname)-8s %(message)s',
+        level=DEBUG_LEVEL,
+        datefmt='%Y-%m-%d %H:%M:%S'
+    )
+    try:
+        read_xlsx_inst = Readxlsx(dict)
+        file_list = read_xlsx_inst.get_file_list()
+        read_xlsx_inst.exec_file_list(file_list)
+        print("INFO : IPY2199 Finished the program.")
+    except SystemExit as e:
+        print("ERROR : EPY2199 Exit the program.")
+    return { 'message' : 'python implemention finished'}
+    
