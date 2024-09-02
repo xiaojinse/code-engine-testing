@@ -147,7 +147,7 @@ class Readxlsx:
                 pass
 
 
-def main(dict):
+def main_job():
     print("helen-testing-123")
     logging.basicConfig(
         format=f'%(asctime)s %(levelname)-8s %(message)s',
@@ -162,4 +162,5 @@ def main(dict):
     except SystemExit as e:
         print("ERROR : EPY2199 Exit the program.")
     return { 'message' : 'python implemention finished'}
-    
+
+main_job()
